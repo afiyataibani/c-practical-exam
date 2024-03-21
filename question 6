@@ -1,0 +1,47 @@
+Q6: Develop a C program that uses a structure to represent a movie (with attributes like title, genre, and language). List N number of movies' details using Array of objects
+
+#include <stdio.h>
+
+#define MAX_MOVIES 100
+
+struct Movie {
+    char title[100];
+    char genre[50];
+    char language[50];
+};
+
+int main() {
+    int n;
+    struct Movie m[MAX_MOVIES];
+
+    printf("Enter the number of movies: ");
+    scanf("%d", &n);
+
+    getchar();
+
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter details for movie %d:\n", i + 1);
+        printf("Title: ");
+        scanf("%[^\n]", m[i].title);
+        getchar(); 
+        
+        printf("Genre: ");
+        scanf("%[^\n]", m[i].genre);
+        getchar(); 
+        
+        printf("Language: ");
+        scanf("%[^\n]", m[i].language);
+        getchar();
+    }
+
+    printf("\nMovie Details:\n");
+    for (int i = 0; i < n; i++) {
+        printf("\nMovie %d:\n", i + 1);
+        printf("Title: %s\n", m[i].title);
+        printf("Genre: %s\n", m[i].genre);
+        printf("Language: %s\n", m[i].language);
+    }
+
+    return 0;
+}
+
