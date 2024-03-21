@@ -1,0 +1,24 @@
+Q1: Finding Factorial Of a number using a loop
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    int factorial = 1;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Error: Factorial of a negative number is undefined.\n");
+        
+        return 1;
+    }
+    
+    for (int i = 1; i <= num; ++i) {
+        factorial *= i;
+    }
+
+    printf("Factorial of %d is %d\n", num, factorial);
+
+}
